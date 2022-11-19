@@ -11,6 +11,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 /**
  *  The user class;
+ *  Uses HasApiTokens, HasFactory and Notifiable;
+ *  extends Authenticatable;
+ *
  */
 class User extends Authenticatable
 {
