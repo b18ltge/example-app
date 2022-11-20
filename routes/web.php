@@ -16,3 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/auth', function () {
+    return view('auth');
+});
+
+Route::post('/auth', function (\Illuminate\Http\Request $request) {
+    $email = $request->get("emailID");
+    $password = $request->get("passwordID");
+    $password2 = $request->get("password2ID");
+
+    // it actually returns "419 | PAGE EXPIRED"
+    return view('auth', [
+        "emailID" => $email,
+        "passwordID" => $password,
+        "password2ID" => $password2,
+    ]);
+});
